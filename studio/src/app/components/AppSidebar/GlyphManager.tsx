@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Menu, MenuItem, Popover, Section } from "@blueprintjs/core";
 import { GlyphSectionView } from "./GlyphManager/GlyphSection";
 

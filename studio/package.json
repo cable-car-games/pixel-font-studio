@@ -4,12 +4,23 @@
   "source": "src/app/index.html",
   "scripts": {
     "build": "parcel build .",
-    "start": "parcel serve ."
+    "start": "parcel serve .",
+    "lint": "eslint src",
+    "fmt": "prettier -w src",
+    "lint:fix": "eslint --fix src",
+    "fmt:check": "prettier -c src"
   },
   "devDependencies": {
+    "@eslint/js": "^9.10.0",
     "@types/react": "^18.3.7",
     "@types/react-dom": "^18.3.0",
-    "parcel": "^2.12.0"
+    "eslint": "^9.10.0",
+    "eslint-plugin-react": "^7.36.1",
+    "globals": "^15.9.0",
+    "parcel": "^2.12.0",
+    "prettier": "^3.3.3",
+    "process": "^0.11.10",
+    "typescript-eslint": "^8.6.0"
   },
   "dependencies": {
     "@blueprintjs/core": "^5.12.0",

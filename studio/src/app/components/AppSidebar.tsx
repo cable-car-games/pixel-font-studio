@@ -1,3 +1,4 @@
+import React from "react";
 import { FontMetadata } from "./AppSidebar/FontMetadata";
 import { GlyphManager } from "./AppSidebar/GlyphManager";
 

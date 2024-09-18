@@ -1,3 +1,4 @@
+import React from "react";
 import { AppSidebar } from "./AppSidebar";
 import { AppContent } from "./AppContent";
 import { AppToolbar } from "./AppToolbar";
