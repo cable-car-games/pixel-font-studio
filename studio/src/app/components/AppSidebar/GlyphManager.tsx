@@ -1,24 +1,22 @@
-import React from "react";
-import { Button, Menu, MenuItem, Popover, Section } from "@blueprintjs/core";
+import React, { useState } from "react";
+import { Button, Section } from "@blueprintjs/core";
 import { GlyphSectionView } from "./GlyphManager/GlyphSection";
+import { NewSectionDialog } from "./GlyphManager/NewSectionDialog";
 
 export function GlyphManager() {
+  const [isNewSectionOverlayOpen, setNewSectionOverlayOpen] = useState(false);
+
   return (
     <Section
       compact
       title="Glyphs"
       icon="new-text-box"
       rightElement={
-        <Popover
-          content={
-            <Menu>
-              <MenuItem text="From codepoint range" />
-              <MenuItem text="From Unicode block" />
-            </Menu>
-          }
-        >
-          <Button icon="add" minimal />
-        </Popover>
+        <Button
+          icon="add"
+          minimal
+          onClick={() => setNewSectionOverlayOpen(true)}
+        />
       }
     >
       <GlyphSectionView
@@ -28,6 +26,11 @@ export function GlyphManager() {
           end: 0x007f,
         }}
         isShown
+      />
+
+      <NewSectionDialog
+        isOpen={isNewSectionOverlayOpen}
+        onClose={() => setNewSectionOverlayOpen(false)}
       />
     </Section>
   );

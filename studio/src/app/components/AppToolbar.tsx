@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Alignment,
   Button,
@@ -8,8 +8,11 @@ import {
   Navbar,
   Popover,
 } from "@blueprintjs/core";
+import { AboutDialogContext } from "./Dialogs/AboutDialog";
 
 export function AppToolbar() {
+  const [, setAboutDialogOpen] = useContext(AboutDialogContext);
+
   return (
     <Navbar>
       <Navbar.Group align={Alignment.LEFT}>
@@ -49,7 +52,11 @@ export function AppToolbar() {
               <MenuItem icon="manual" text="Manual" />
               <MenuDivider />
               <MenuItem icon="dollar" text="Koha (Donations)" />
-              <MenuItem icon="info-sign" text="About" />
+              <MenuItem
+                icon="info-sign"
+                text="About"
+                onClick={() => setAboutDialogOpen(true)}
+              />
             </Menu>
           }
         >
